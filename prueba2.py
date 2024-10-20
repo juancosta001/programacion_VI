@@ -51,6 +51,7 @@ def main(page):
         ],
         alignment=ft.MainAxisAlignment.SPACE_BETWEEN
     )
+
     # Función para limpiar la lista de productos
     def limpiar(e):
         checkboxes_container.controls.clear()  # Limpiar los checkboxes
@@ -59,9 +60,11 @@ def main(page):
     # Fila con campo de texto y botón de agregar (con color dorado)
     input_row = ft.Row([
         new_task,
-        ft.IconButton(icon=ft.icons.ADD, on_click=agregar_click, bgcolor="#FFD700")  # Botón "Agregar" en dorado
+        ft.IconButton(icon=ft.icons.ADD, on_click=agregar_click, bgcolor="#D3BF43", icon_color="#000000")  # Botón "Agregar" en dorado
     ])
-    limpiar_button = ft.ElevatedButton("Limpiar", on_click=limpiar, bgcolor="#FFD700",color="#000000")
+    
+    limpiar_button = ft.ElevatedButton("Limpiar", on_click=limpiar, bgcolor="#D3BF43", color="#000000")
+
     content_container = ft.Container(
         content=ft.Column([
             header,
@@ -73,7 +76,7 @@ def main(page):
         expand=True,
         padding=20,
         alignment=ft.alignment.top_center,
-         bgcolor=None
+        bgcolor=None
     )
 
     # Imagen de fondo
@@ -83,8 +86,8 @@ def main(page):
     page.add(
         ft.Stack(
             controls=[
-                background_image,  # Fondo
-                content_container  # Controles superpuestos
+                background_image, 
+                content_container  
             ]
         )
     )
